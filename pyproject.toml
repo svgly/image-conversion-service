@@ -5,10 +5,22 @@ description = "Microservice for converting SVG to PNG/ICO"
 authors = ["svgly <denioberlev@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [
+    { include = "src", from = "." }
+]
+
+[tool.poetry.scripts]
+start = "src.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.13"
 
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+flake8 = "^7.3.0"
+flake8-bugbear = "^24.12.12"
+isort = "^6.0.1"
 
 [build-system]
 requires = ["poetry-core"]

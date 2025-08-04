@@ -1,0 +1,12 @@
+[flake8]
+max-line-length = 120
+extend-ignore = E203, W503
+select = B,C,E,F,W,T4,B9
+extend-select = BUG
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    build,
+per-file-ignores =
+    __init__.py:F401
