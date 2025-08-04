@@ -1,0 +1,31 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+        name: Black
+        stages: [pre-commit]
+        args: [--safe, --quiet]
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.3.0
+    hooks:
+      - id: flake8
+        name: Flake8
+        stages: [pre-commit]
+        additional_dependencies: [flake8-bugbear==24.12.12]
+
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+        name: isort
+        stages: [pre-commit]
+        args: ["--profile", "black"]
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: "v4.8.3"
+    hooks:
+      - id: commitizen
+        name: Commitizen
+        stages: [commit-msg]
